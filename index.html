@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Набережная Новороссийска | Мое любимое место</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+</head>
+<body>
+    <div class="preloader">
+        <div class="wave"></div>
+        <p>Загружаем морские пейзажи...</p>
+    </div>
+
+    <header class="header" id="header">
+        <nav class="nav">
+            <div class="nav-logo">Novorossiysk</div>
+            <ul class="nav-links">
+                <li><a href="#about">О месте</a></li>
+                <li><a href="#gallery">Галерея</a></li>
+                <li><a href="#map">Карта</a></li>
+                <li><a href="#facts">Факты</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-content">
+            <h1 class="header-title">Набережная адмирала Серебрякова</h1>
+            <p class="header-subtitle">Где корабли прощаются с берегом</p>
+            <div class="cta-container">
+                <button class="cta-button" onclick="scrollToSection('about')">
+                    <span>Узнать больше</span>
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="about" class="about">
+            <div class="container">
+                <h2>Сердце Новороссийска</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Мост между героическим прошлым и динамичным будущим.</p>
+                        
+                        <div class="features">
+                            <div class="feature">
+                                <h3>История</h3>
+                                <p>Носит имя первого градоначальника и основателя города</p>
+                            </div>
+                            <div class="feature">
+                                <h3>Закаты</h3>
+                                <p>Самые живописные закаты на всём Черноморском побережье</p>
+                            </div>
+                            <div class="feature">
+                                <h3>Прогулки</h3>
+                                <p>Пешеходная зона протяженностью более 2 километров</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <div class="image-frame">
+                            <img src="images/about-image.jpg" alt="Вид на набережную">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery">
+            <div class="container">
+                <h2>Моменты набережной</h2>
+                <p class="section-subtitle">Фотографии, которые передают атмосферу этого места</p>
+                
+                <div class="gallery-controls">
+                    <button class="gallery-btn prev-btn">←</button>
+                    <div class="gallery-counter">
+                        <span id="current-slide">1</span> / <span id="total-slides">3</span>
+                    </div>
+                    <button class="gallery-btn next-btn">→</button>
+                </div>
+
+                <div class="slideshow-container">
+                    <div class="slide">
+                        <img src="images/photo-1.jpg" alt="Набережная утром" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/photo-2.jpg" alt="Набережная вечером" class="slide-image">
+                    </div>
+                    <div class="slide">
+                        <img src="images/photo-3.jpg" alt="Памятники набережной" class="slide-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="map" class="map-section">
+            <div class="container">
+                <h2>На карте города</h2>
+                <p class="section-subtitle">Найдите свой идеальный маршрут для прогулки</p>
+                
+                <div id="map-container"></div>
+                
+                <div class="map-info">
+                    <div class="info-card">
+                        <h4>Как добраться</h4>
+                        <p>Центральная набережная, легко дойти от ж/д вокзала или автовокзала</p>
+                    </div>
+                    <div class="info-card">
+                        <h4>Лучшее время</h4>
+                        <p>Утро для спокойной прогулки или вечер для романтичного заката</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="facts" class="facts">
+            <div class="container">
+                <h2>Интересные факты</h2>
+                <div class="facts-grid">
+                    <div class="fact-card">
+                        <div class="fact-number">1</div>
+                        <h3>Морские ворота</h3>
+                        <p>Набережная — это лицо города-порта, встречающее все круизные лайнеры</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-number">2</div>
+                        <h3>Архитектура</h3>
+                        <p>Сочетание современного дизайна с исторической застройкой XIX века</p>
+                    </div>
+                    <div class="fact-card">
+                        <div class="fact-number">3</div>
+                        <h3>Культурный центр</h3>
+                        <p>Здесь проходят все major городские мероприятия и фестивали</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Набережная Новороссийска</h3>
+                    <p>Место силы и вдохновения</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Быстрые ссылки</h4>
+                    <ul>
+                        <li><a href="#about">О месте</a></li>
+                        <li><a href="#gallery">Галерея</a></li>
+                        <li><a href="#map">Карта</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Контакты</h4>
+                    <p>8(800)555-35-35</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Набережная Новороссийска</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
